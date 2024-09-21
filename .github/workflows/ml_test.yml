@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.8'
 
@@ -25,14 +25,4 @@ jobs:
 
     - name: Run model and tests
       run: |
-        python src/model.py
-        python src/test_model.py
-
-    - name: Generate report
-      run: python src/generate_report.py
-
-    - name: Upload HTML report
-      uses: actions/upload-artifact@v2
-      with:
-        name: ml-test-report
-        path: ml_report.html
+        python sr
