@@ -1,5 +1,7 @@
 # ML Testing Project
 
+[![CI](https://github.com/gkhayes/ml_testing/actions/workflows/ci.yml/badge.svg)](https://github.com/gkhayes/ml_testing/actions/workflows/ci.yml)
+
 This project demonstrates a simple machine learning testing setup using Python, Giskard, and Deepchecks.
 
 ## Setup
@@ -14,6 +16,18 @@ This project demonstrates a simple machine learning testing setup using Python, 
 3. Run the tests:
     python src/test_model.py
 
+
+## CI/CD
+
+This project uses GitHub Actions for continuous integration. The workflow is defined in `.github/workflows/ci.yml`. It runs automatically on pushes to the main branch and on pull requests.
+
+The CI pipeline does the following:
+1. Sets up a Python 3.9 environment
+2. Installs project dependencies
+3. Runs linting checks using flake8
+4. Runs the tests
+
+You can see the current status of the CI pipeline in the badge at the top of this README.
 
 ## Project Structure
 
