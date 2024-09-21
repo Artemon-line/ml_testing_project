@@ -18,12 +18,16 @@ jobs:
       with:
         python-version: '3.8'
 
+    - name: Create and activate virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install --force-reinstall urllib3<2.0 requests<2.29.0 requests-toolbelt<1.0.0
-
 
     - name: Run model and tests
       run: |
