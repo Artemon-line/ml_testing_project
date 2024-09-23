@@ -1,4 +1,4 @@
-from giskard import Model, Dataset
+from giskard import scan, Model, Dataset
 from deepchecks.tabular import Dataset as DeepcheckDataset
 from deepchecks.tabular.checks.model_evaluation import ConfusionMatrixReport
 from model import train_model, load_data
@@ -9,22 +9,13 @@ def test_with_giskard():
 
     giskard_dataset = Dataset(X_test, name="iris_test")
     giskard_model = Model(
-        model.predict,
-        model.predict_proba,
-        classification_labels=model.classes_,
-        feature_names=list(X_test.columns),
-        classification_threshold=0.5,
+        model,
+        model_type="classification",
     )
 
-    results = giskard_model.test_performance(giskard_dataset)
+    results = scan(giskard_model, giskard_dataset)
     print("Giskard Performance Test Results:")
     print(results)
-
-    bias_test = giskard_model.test_bias(
-        giskard_dataset, protected_feature="petal length (cm)", target="target"
-    )
-    print("\nGiskard Bias Test Results:")
-    print(bias_test)
 
 
 def test_with_deepchecks():
