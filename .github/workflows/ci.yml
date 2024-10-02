@@ -37,3 +37,10 @@ jobs:
       run: |
         python src/model.py
         python src/test_model.py
+    - name: Generate report
+      run: python src/generate_report.py
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v2
+      with:
+        name: ml-test-report
+        path: reports/ml_report.html

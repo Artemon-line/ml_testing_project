@@ -50,7 +50,7 @@ def generate_report():
         classification_report=classification_rep,
     )
 
-    with open("ml_report.html", "w") as f:
+    with open("./reports/ml_report.html", "w", encoding="utf-8") as f:
         f.write(html_out)
 
 
