@@ -40,7 +40,7 @@ jobs:
     - name: Generate report
       run: python src/generate_report.py
     - name: Upload HTML report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: ml-test-report
         path: reports/ml_report.html
