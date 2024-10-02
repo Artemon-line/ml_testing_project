@@ -1,6 +1,6 @@
 # ML Testing Project
 
-[![CI](https://github.com/gkhayes/ml_testing/actions/workflows/ci.yml/badge.svg)](https://github.com/gkhayes/ml_testing/actions/workflows/ci.yml)
+[![CI](https://github.com/Artemon-line/ml_testing_project/actions/workflows/ci.yml/badge.svg)](https://github.com/Artemon-line/ml_testing_project/actions/workflows/ci.yml)
 
 This project demonstrates a simple machine learning testing setup using Python, Giskard, and Deepchecks.
 
