@@ -44,3 +44,9 @@ jobs:
       with:
         name: ml-test-report
         path: reports/ml_report.html
+    - name: HTML Preview
+      id: html_preview
+      uses: pavi2410/html-preview-action@v4
+      with:
+        html_file: 'reports/ml_report.html'
+        job_summary: true
