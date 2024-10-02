@@ -3,6 +3,7 @@ from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 from sklearn.metrics import confusion_matrix, classification_report
 from model import train_model
+import os
 
 
 def generate_confusion_matrix(y_true, y_pred):
@@ -49,8 +50,10 @@ def generate_report():
         feature_importance_chart=feature_importance_chart,
         classification_report=classification_rep,
     )
+    # Create the reports directory if it doesn't exist
+    os.makedirs("reports", exist_ok=True)
 
-    with open("./reports/ml_report.html", "w", encoding="utf-8") as f:
+    with open("reports/ml_report.html", "w", encoding="utf-8") as f:
         f.write(html_out)
 
 
