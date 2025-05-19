@@ -53,7 +53,7 @@ def generate_report():
     # Create the reports directory if it doesn't exist
     os.makedirs("reports", exist_ok=True)
 
-    with open("reports/ml_report.html", "w", encoding="utf-8") as f:
+    with open("reports/index.html", "w", encoding="utf-8") as f:
         f.write(html_out)
 
 
